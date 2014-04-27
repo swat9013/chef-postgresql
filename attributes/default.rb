@@ -116,7 +116,11 @@ when "redhat", "centos", "scientific", "oracle"
      default['postgresql']['server']['service_name'] = "postgresql-#{node['postgresql']['version']}"
   else
     default['postgresql']['dir'] = "/var/lib/pgsql/data"
-    default['postgresql']['server']['service_name'] = "postgresql"
+    if node['postgresql']['version'].to_f >= 9.2
+      default['postgresql']['server']['service_name'] = "postgresql-#{node['postgresql']['version']}"
+    else
+      default['postgresql']['server']['service_name'] = "postgresql"
+    end
   end
 
 when "suse"

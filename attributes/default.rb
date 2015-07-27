@@ -253,6 +253,11 @@ default['postgresql']['pgdg']['repo_rpm_url'] = {
         "x86_64" => "http://yum.postgresql.org/9.4/redhat/rhel-5-x86_64/pgdg-centos94-9.4-1.noarch.rpm"
       }
     },
+    "amazon" =>{
+      "2015" => {
+        "x86_64" => "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-ami201503-94-9.4-1.noarch.rpm"
+      },
+    },
   },
   "9.3" => {
     "amazon" => {
@@ -559,4 +564,3 @@ default['postgresql']['pgdg']['repo_rpm_url'] = {
     }
   },
 };
-
